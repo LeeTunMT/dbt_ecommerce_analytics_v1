@@ -1,0 +1,8 @@
+
+sources:
+  - name: brazillian_e_commerce
+    database: project4-fraud-dbt
+    schema: brazillian_e_commerce_data
+    tables:
+      - name: 
+      - name:
