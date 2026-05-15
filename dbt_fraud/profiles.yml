@@ -1,0 +1,14 @@
+dbt_fraud:
+  outputs:
+    dev:
+      dataset: analytics-fraud-data
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: US
+      method: oauth
+      priority: interactive
+      project: project4-fraud-dbt
+      threads: 4
+      type: bigquery
+  target: dev
+
