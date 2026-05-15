@@ -18,7 +18,7 @@ x-airflow-common:
     - ./dags:/opt/airflow/dags
     - ./logs:/opt/airflow/logs
     - ./plugins:/opt/airflow/plugins
-    - ./dbt_fraud:/opt/airflow/dbt_fraud
+    - ./dbt_ecommerce:/opt/airflow/dbt_ecommerce
     # Mount ADC token from current machine to container
     - ~/.config/gcloud:/.config/gcloud:ro 
   user: "${AIRFLOW_UID:-50000}:0"
