@@ -1,7 +1,7 @@
 sources:
-  - name: olist_raw
-    database: project4-fraud-dbt
-    schema: brazillian_e_commerce_data # source in BQ
+  - name: olist_raw # the name models refer to use
+    database: project4-fraud-dbt # name of project on GCP
+    schema: brazillian_e_commerce_data # source in BigQuery (name of datasets in BQ)
     tables:
       - name: orders
       - name: order_items
