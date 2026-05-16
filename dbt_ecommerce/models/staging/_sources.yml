@@ -1,8 +1,14 @@
-
 sources:
-  - name: brazillian_e_commerce
+  - name: olist_raw
     database: project4-fraud-dbt
-    schema: brazillian_e_commerce_data
+    schema: brazillian_e_commerce_data # source in BQ
     tables:
-      - name: 
-      - name:
+      - name: orders
+      - name: order_items
+      - name: order_payments
+      - name: order_reviews
+      - name: customers
+      - name: products
+      - name: product_category_name_translation
+      - name: sellers
+      - name: geolocations
