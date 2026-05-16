@@ -2,3 +2,4 @@ datasets
 .env
 .venv
 logs
+.vscode
