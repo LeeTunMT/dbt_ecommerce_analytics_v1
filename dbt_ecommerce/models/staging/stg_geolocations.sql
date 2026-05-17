@@ -4,7 +4,7 @@ with source as (
 
 grouped as (
     select
-        geolocation_zip_code_prefix as zip_code_prefix,
+        cast(geolocation_zip_code_prefix as varchar) as zip_code_prefix,
         -- take the average lat and lng to figure out the middle point of zipcode's area
         avg(geolocation_lat) as lat,
         avg(geolocation_lng) as lng,
