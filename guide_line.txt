@@ -1,0 +1,49 @@
+## Login in host machine, install first if dont have yet
+brew install --cask google-cloud-sdk
+
+# login 
+gcloud auth application-default login
+
+# choose project
+gcloud auth application-default set-quota-project YOUR_PROJECT_ID 
+
+## run this command to grant Permission 
+echo -e "AIRFLOW_UID=$(id -u)" > .env
+
+## Build custom image and Run
+docker compose up --build
+
+docker exec -it project4-dbtmodelingforfrauddetectionmetrics-postgres-1 psql -U ecommerce_db
+
+## Check test connection
+docker exec -it project4-dbtmodelingforfrauddetectionmetrics-airflow-webserver-1 /bin/bash -c "cd /opt/airflow/ecommerce_db && dbt debug --profiles-dir ."
+
+## After that add packages.yml to dbt_fraud, then run this command to install
+docker exec -it project4-dbtmodelingforfrauddetectionmetrics-airflow-webserver-1 /bin/bash -c "cd /opt/airflow/ecommerce_db && dbt deps --profiles-dir ."
+
+
+## Add all dataset to GCS and map into tables in dataset name brazillian_e_commerce_data in BQ 
+
+## inf
+##### orders null
+order_approved_at                 160
+order_delivered_carrier_date     1783
+order_delivered_customer_date    2965
+
+##### order_items
+(order_id, order_item_id) : primary key
+
+
+##### geolocation 
+many duplicated rows
+
+#### oder_reviews null
+review_comment_title       87656
+review_comment_message     58247
+
+
+#### products null
+product_category_name         610
+product_name_lenght           610
+product_description_lenght    610
+product_photos_qty            610
