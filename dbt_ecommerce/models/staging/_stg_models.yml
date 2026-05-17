@@ -6,9 +6,109 @@ models:
           - unique
           - not_null
           
+
   - name: stg_products
     columns:
       - name: product_id
         tests:
           - unique
           - not_null
+
+
+  - name: stg_cutomers
+    columns:
+      - name: customer_id
+        tests:
+          - unique
+          - not_null
+
+
+  - name: stg_sellers
+    columns:
+      - name: seller_id
+        tests:
+          - unique
+          - not_null
+
+
+  - name: stg_order_reviews
+  
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - review_id
+            - order_id
+
+    columns:
+      - name: review_id
+        tests:
+          - not_null
+
+      - name: order_id
+        tests:
+          - not_null
+
+
+  - name: stg_order_payments
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - order_id
+            - payment_sequential
+
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+
+      - name: payment_sequential
+        tests:
+          - not_null
+
+
+  - name: stg_order_items
+
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - order_id
+            - order_item_id
+
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+
+      - name: order_item_id
+        tests:
+          - not_null
+
+      - name: product_id
+        tests:
+          - not_null
+
+      - name: seller_id
+        tests:
+          - not_null
+
+
+  - name: stg_geolocations
+    columns:
+      - name: geolocation_zip_code_prefix
+        tests:
+          - not_null
+
+
+  - name: stg_geolocation
+      columns:
+        - name: zip_code_prefix
+          tests:
+            - unique
+            - not_null
+        - name: lat
+          tests:
+            - not_null
+        - name: lng
+          tests:
+            - not_null
