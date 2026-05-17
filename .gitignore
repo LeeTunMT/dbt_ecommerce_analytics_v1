@@ -1,0 +1,6 @@
+datasets
+.env
+.venv
+logs
+.vscode
+.DS_Store
