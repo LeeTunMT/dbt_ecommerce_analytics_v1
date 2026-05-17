@@ -9,7 +9,7 @@ translation as (
 renamed as (
     select
         s.product_id,
-        coalesce(t.product_category_name_english, s.product_category_name) as product_category_name,
+        coalesce(t.product_category_name_english, s.product_category_name, 'Unknowed') as product_category_name,
         
         cast(s.product_name_lenght as integer) as product_name_length,
         cast(s.product_description_lenght as integer) as product_description_length,
