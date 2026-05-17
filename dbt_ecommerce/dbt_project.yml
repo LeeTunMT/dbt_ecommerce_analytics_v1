@@ -38,7 +38,7 @@ models:
 
     intermediate:
       +schema: intermediate
-      +materialized: ephemeral    # Inlined as CTE, no physical object created
+      +materialized: view     # Logical view, recalculated on each query
 
     marts:
       +schema: marts
