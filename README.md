@@ -3,7 +3,7 @@
 ### About Data
 The project used this dataset [Olist](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce).
 Schema likes below:
-![Schema](image/schema_olist.png)
+![Schema](image/schema_olis_raw.png)
 ### About this project
 In this project, I aim to build a E-commerce system to clarify 3 Big Questions:
 + Sale & Revenue: How much is the revenue? Average of orders? which is the most populative payment method? ...
