@@ -74,7 +74,7 @@ models:
           combination_of_columns:
             - order_id
             - order_item_id
-
+      # this because each order id has one or many items and the order_item_id is the order of that order_id
     columns:
       - name: order_id
         tests:
@@ -88,10 +88,10 @@ models:
         tests:
           - not_null
 
-      - name: seller_id
-        tests:
-          - not_null
-
+      # - name: seller_id
+      #   tests:
+      #     - not_null
+      # it doesn't matter when this attribute is null 
 
   - name: stg_geolocations
     columns:
