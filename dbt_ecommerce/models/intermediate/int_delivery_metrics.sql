@@ -16,8 +16,8 @@ with source as (
 agg_metrics as (
     select
         order_id, 
-        customer_id,
-        order_status,
+        max(customer_id),
+        max(order_status),
         case 
             when order_estimated_delivery_at < order_delivered_customer_at then true
             else false
