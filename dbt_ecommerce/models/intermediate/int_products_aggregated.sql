@@ -2,8 +2,10 @@
 with source as (
     select 
         product_id,
+        order_id,
         price,
-        freight_value
+        freight_value,
+        shipping_limit_at
     from {{ ref('stg_order_items')}})
 ),
 agg_products as (
